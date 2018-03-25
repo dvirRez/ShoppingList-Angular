@@ -21,13 +21,6 @@
 .remove_item {
   color: red;
   padding: 5px;
-  composes: pointer from '../global.scss';
-
-}
-
-.edit_item {
-  composes: pointer from '../global.scss';
-
 }
 
 .clickable_elements {

@@ -10,15 +10,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       <form class="form_style">
         <p>
           <label>Quantity</label>
-          <input type="text" [value]="item.quantity" name="quantity" />
+          <input type="text" [(ngModel)]="item.quantity" name="quantity" />
         </p>
         <p>
           <label>Price</label>
-          <input type="text" [value]="item.price" name="price" />
+          <input type="text" [(ngModel)]="item.price" name="price" />
         </p>
         <p>
           <label>description</label>
-          <textarea rows="2" [value]="item.description" name="description"></textarea>
+          <textarea rows="2" [(ngModel)]="item.description" name="description"></textarea>
         </p>
       </form>
     </div>
@@ -32,7 +32,7 @@ export class ItemDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.detailsHeader = `${this.item.name} DETAILS`;
+    this.detailsHeader = `${this.item.name.toUpperCase() || ''} DETAILS`;
   }
 
 }

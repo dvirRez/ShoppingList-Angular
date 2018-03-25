@@ -6,15 +6,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     <div class="items_container">
         <input
             type="checkbox"
-            (change)="onCheckboxChange()"
+            (change)="onCheckboxChange($event)"
         />
-      <label [textContent]="item.name" *ngIf="!isEdit" (click)="isEdit=true" from="name"></label>
+      <label [ngClass]="setClasses()" [textContent]="item.name" *ngIf="!isEdit" (click)="isEdit=true" from="name"></label>
       <input class="no-style-input" *ngIf="isEdit" (blur)="isEdit=false" (keydown.enter)="isEdit=false"
              type="text"
              id="name" [(ngModel)]="item.name" />
       <span class="clickable_elements">
-          <span (click)="onEditClick.emit(item);">Edit item</span>
-          <span  class="remove_item" (click)="onRemove.emit(item.id);">X</span>
+          <fa name="edit" class="pointer" (click)="onEditClick.emit(item);"></fa>
+          <span  class="remove_item pointer" (click)="onRemove.emit(item.id);">X</span>
         </span>
 
     </div>
@@ -22,6 +22,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./list-item.component.scss']
 })
 export class ListItemComponent implements OnInit {
+
+  isChecked: boolean = false;
 
   @Input() item;
   @Output() onChange = new EventEmitter();
@@ -33,8 +35,13 @@ export class ListItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  onCheckboxChange() {
+  setClasses = () => ({
+    'basicItem': !this.isChecked,
+    'deletedItem': this.isChecked,
+  });
 
+  onCheckboxChange(e) {
+    this.isChecked = e.target.checked;
   }
 
 }
