@@ -1,0 +1,21 @@
+<div class="app_container">
+  <header class="header gradient_background">
+    <span>Shopping List</span>
+  </header>
+  <div class="sub_container">
+    <div class="container1">
+      <div class="list_outer_container light_border">
+        <app-shopping-list
+          [listItems]="listItems"
+          (onAddedInputEnterKey)="addItem($event)"
+          (onDelete)="removeItem($event)"
+          (OnOpenDetailsPanel)="ToggleDetailsPanel($event)"
+        >
+        </app-shopping-list>
+      </div>
+      <div class="details_outer_container">
+        <app-item-details *ngIf="selectedItem" [item]="selectedItem"></app-item-details>
+      </div>
+    </div>
+  </div>
+</div>
