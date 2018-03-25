@@ -1,10 +1,10 @@
-<div class="app_container">
+<div class="app-container">
   <header class="header gradient_background">
     <span>Shopping List</span>
   </header>
-  <div class="sub_container">
+  <div class="sub-container">
     <div class="container1">
-      <div class="list_outer_container light_border">
+      <div class="list-outer-container light_border">
         <app-shopping-list
           [listItems]="listItems"
           (onAddedInputEnterKey)="addItem($event)"
@@ -13,7 +13,7 @@
         >
         </app-shopping-list>
       </div>
-      <div class="details_outer_container">
+      <div class="details-outer-container">
         <app-item-details *ngIf="selectedItem" [item]="selectedItem"></app-item-details>
       </div>
     </div>

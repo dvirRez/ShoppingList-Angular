@@ -6,7 +6,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ListDataService } from './list-data.service';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
@@ -15,7 +14,6 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     ListItemComponent,
     ShoppingListComponent,
     ItemDetailsComponent,

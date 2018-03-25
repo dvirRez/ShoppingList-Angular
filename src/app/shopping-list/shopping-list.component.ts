@@ -4,7 +4,7 @@ import { ListItemComponent } from '../list-item/list-item.component';
 @Component({
   selector: 'app-shopping-list',
   template: `
-    <div class="list_container">
+    <div class="list-container">
       <div class="sub_header">
         <span>ADD YOUR ITEMS HERE</span>
       </div>
@@ -16,7 +16,7 @@ import { ListItemComponent } from '../list-item/list-item.component';
          (onEditClick)="OnOpenDetailsPanel.emit($event)"
       >
       </app-list-item>
-      <div class="add_item_div">
+      <div class="add-item_div">
         <input class="add-item-input" placeholder="Add Item" name="label" (keyup.enter)="onAddedInputEnterKey.emit($event)">
       </div>
     </div>    

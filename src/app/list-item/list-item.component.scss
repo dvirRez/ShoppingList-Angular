@@ -1,11 +1,11 @@
-.basicItem {
+.basic-item {
   composes: light_text from '../global.scss';
   composes: item_padding from '../global.scss';
   composes: text_cursor from '../global.scss';
   composes: input from '../global.scss';
 }
 
-.deletedItem {
+.deleted-item {
   text-decoration: line-through;
   composes: light_text from '../global.scss';
   composes: item_padding from '../global.scss';
@@ -13,16 +13,16 @@
   composes: input from '../global.scss';
 }
 
-.items_container {
+.items-container {
   border-bottom: 1px solid #d3d3d3;
   padding: 5px 10px;
 }
 
-.remove_item {
+.remove-item {
   color: red;
   padding: 5px;
 }
 
-.clickable_elements {
+.clickable-elements {
   float: right;
 }

@@ -1,8 +1,8 @@
-.list_container {
+.list-container {
   width: 300px;
 }
 
-.add_item_div {
+.add-item_div {
   border-bottom: 1px solid #d3d3d3;
 }
 
@@ -12,7 +12,7 @@
   padding: 10px;
 }
 @media only screen and (max-width: 700px) {
-  .add_item_div {
+  .add-item-div {
     border: none;
   }
 }

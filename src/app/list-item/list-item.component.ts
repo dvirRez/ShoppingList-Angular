@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-list-item',
   template: `
-    <div class="items_container">
+    <div class="items-container">
         <input
             type="checkbox"
             (change)="onCheckboxChange($event)"
@@ -12,9 +12,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       <input class="no-style-input" *ngIf="isEdit" (blur)="isEdit=false" (keydown.enter)="isEdit=false"
              type="text"
              id="name" [(ngModel)]="item.name" />
-      <span class="clickable_elements">
+      <span class="clickable-elements">
           <fa name="edit" class="pointer" (click)="onEditClick.emit(item);"></fa>
-          <span  class="remove_item pointer" (click)="onRemove.emit(item.id);">X</span>
+          <span  class="remove-item pointer" (click)="onRemove.emit(item.id);">X</span>
         </span>
 
     </div>
@@ -36,8 +36,8 @@ export class ListItemComponent implements OnInit {
   }
 
   setClasses = () => ({
-    'basicItem': !this.isChecked,
-    'deletedItem': this.isChecked,
+    'basic-item': !this.isChecked,
+    'deleted-item': this.isChecked,
   });
 
   onCheckboxChange(e) {

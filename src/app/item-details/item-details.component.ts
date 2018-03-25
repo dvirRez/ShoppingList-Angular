@@ -3,11 +3,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-item-details',
   template: `
-    <div class="details_container light_border">
+    <div class="details-container light_border">
       <div class="sub_header">
         <span [innerText]="detailsHeader"></span>
       </div>
-      <form class="form_style">
+      <form class="form-style">
         <p>
           <label>Quantity</label>
           <input type="text" [(ngModel)]="item.quantity" name="quantity" />
