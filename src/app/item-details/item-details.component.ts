@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-item-details',
   template: `
-    <div class="details_container">
+    <div class="details_container light_border">
       <div class="sub_header">
         <span [innerText]="detailsHeader"></span>
       </div>

@@ -17,7 +17,7 @@ import { ListItemComponent } from '../list-item/list-item.component';
       >
       </app-list-item>
       <div class="add_item_div">
-        <input class="add-item-input" name="label" (keyup.enter)="onAddedInputEnterKey.emit($event)">
+        <input class="add-item-input" placeholder="Add Item" name="label" (keyup.enter)="onAddedInputEnterKey.emit($event)">
       </div>
     </div>    
   `,

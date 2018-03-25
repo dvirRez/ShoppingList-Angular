@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 
-.input {
+.no-style-input {
   outline: none;
   border: none;
 }
@@ -46,8 +46,13 @@
 form p {
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0 0 10px 0;
 }
 
+form label {
+  margin-bottom: 5px;
+}
 .sub_header {
   padding: 5px;
   background: linear-gradient(rgba(0,229,145,1), rgba(47,239,188,1));
