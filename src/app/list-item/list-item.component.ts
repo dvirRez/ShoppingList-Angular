@@ -15,11 +15,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
                from="name"
         ></label>        
       </span>
-      <input class="no-style-input" 
-             autofocus
+      <input class="no-style-input"
+             focus="true"
              *ngIf="isEdit" 
-             (blur)="isEdit=false" 
-             (keydown.enter)="isEdit=false"
+             (blur)="onInputModelChange($event);" 
+             (keydown.enter)="onInputModelChange($event);"
              type="text"
              [(ngModel)]="item.name" 
       />
@@ -35,6 +35,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ListItemComponent implements OnInit {
 
   isChecked: boolean = false;
+  isEdit: boolean = false;
 
   @Input() item;
   @Output() onChange = new EventEmitter();
@@ -56,4 +57,9 @@ export class ListItemComponent implements OnInit {
     this.isChecked = e.target.checked;
   }
 
+  // Make sure item name is limited to 20 chars
+  onInputModelChange(e) {
+    this.isEdit=false;
+    this.item.name = e.target.value.substring(0, 20);
+  }
 }

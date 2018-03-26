@@ -35,16 +35,19 @@ export class AppComponent {
   };
 
   addItem(e) {
-    const newItem = {
-      id: this.nextId,
-      name: e.target.value || 'Blank',
-      quantity: 0,
-      price: 0,
-      description: '',
-    };
+    const itemName = e.target.value;
+    if(itemName !== '') {
+      const newItem = {
+        id: this.nextId,
+        name: itemName.substring(0, 20),
+        quantity: 0,
+        price: 0,
+        description: '',
+      };
 
-    this.listItems = [...this.listItems, newItem];
-    this.nextId ++;
+      this.listItems = [...this.listItems, newItem];
+      this.nextId ++;
+    }
   }
 
   removeItem(itemId) {

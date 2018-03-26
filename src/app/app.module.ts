@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule  } from '@angular/common/http';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {FocusModule} from 'angular2-focus';
 import { ListDataService } from './list-data.service';
 
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
     HttpClientModule,
     FormsModule,
     AngularFontAwesomeModule,
-    Ng4LoadingSpinnerModule
+    Ng4LoadingSpinnerModule,
+    FocusModule
   ],
   providers: [
     ListDataService
