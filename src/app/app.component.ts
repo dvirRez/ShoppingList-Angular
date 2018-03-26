@@ -11,7 +11,6 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @ViewChild(ItemDetailsComponent) child;
   private listItems: any = null;
   private selectedItem: any = null;
   private nextId: number = null;
