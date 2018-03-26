@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ListDataService } from './list-data.service';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { Observable } from 'rxjs';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 
@@ -14,14 +16,19 @@ export class AppComponent {
   private selectedItem: any = null;
   private nextId: number = null;
 
-  constructor(private listDataService: ListDataService) {
-
-  }
+  constructor(
+    private listDataService: ListDataService,
+    private spinnerService: Ng4LoadingSpinnerService
+  ) {}
 
   ngOnInit() {
-    console.log(this.listDataService.getJSON());
-    this.listItems = this.listDataService.getJSON();
-    this.nextId = this.listItems.length;
+    this.spinnerService.show();
+    const subscription = Observable.fromPromise(this.listDataService.getListData());
+    subscription.subscribe( listData => {
+      this.listItems = listData;
+      this.nextId = this.listItems.length; //Since index begins at 0
+      this.spinnerService.hide();
+    });
   }
 
   findItemById = (itemId) => {
@@ -49,6 +56,7 @@ export class AppComponent {
     }
   }
 
+  // Handle changing selected item for the details component
   ToggleDetailsPanel(item) {
     this.selectedItem =(this.selectedItem && this.selectedItem.id === item.id) ? null : this.findItemById(item.id);
   }

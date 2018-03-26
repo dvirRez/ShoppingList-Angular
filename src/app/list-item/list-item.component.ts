@@ -2,16 +2,27 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list-item',
+  // Notice when clicking on item name an input is replacing the label for editing
   template: `
     <div class="items-container">
-        <input
-            type="checkbox"
-            (change)="onCheckboxChange($event)"
+        <input type="checkbox"
+               (change)="onCheckboxChange($event)"
         />
-      <label [ngClass]="setClasses()" [textContent]="item.name" *ngIf="!isEdit" (click)="isEdit=true" from="name"></label>
-      <input class="no-style-input" *ngIf="isEdit" (blur)="isEdit=false" (keydown.enter)="isEdit=false"
+      <span [ngClass]="setClasses()" *ngIf="!isEdit" >
+        <label [textContent]="item.name" 
+               class="basic-item"
+               (click)="isEdit=true" 
+               from="name"
+        ></label>        
+      </span>
+      <input class="no-style-input" 
+             autofocus
+             *ngIf="isEdit" 
+             (blur)="isEdit=false" 
+             (keydown.enter)="isEdit=false"
              type="text"
-             id="name" [(ngModel)]="item.name" />
+             [(ngModel)]="item.name" 
+      />
       <span class="clickable-elements">
           <fa name="edit" class="pointer" (click)="onEditClick.emit(item);"></fa>
           <span  class="remove-item pointer" (click)="onRemove.emit(item.id);">X</span>
@@ -35,6 +46,7 @@ export class ListItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Helper function to handle marking of deleted item depending on its checkbox
   setClasses = () => ({
     'basic-item': !this.isChecked,
     'deleted-item': this.isChecked,

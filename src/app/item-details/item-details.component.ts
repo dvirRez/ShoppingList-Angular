@@ -3,8 +3,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-item-details',
   template: `
-    <div class="details-container light_border">
-      <div class="sub_header">
+    <div class="details-container light-border">
+      <div class="sub-header">
         <span [innerText]="detailsHeader"></span>
       </div>
       <form class="form-style">
@@ -29,8 +29,9 @@ export class ItemDetailsComponent implements OnInit {
 
   private detailsHeader: string = '';
   @Input() item;
-  constructor() { }
+  constructor() {}
 
+  // Handle dynamic header for the component with the item's name
   ngOnInit() {
     this.detailsHeader = `${this.item.name.toUpperCase() || ''} DETAILS`;
   }

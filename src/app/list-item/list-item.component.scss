@@ -1,16 +1,16 @@
+@import '../../styles.scss';
+
 .basic-item {
-  composes: light_text from '../global.scss';
-  composes: item_padding from '../global.scss';
-  composes: text_cursor from '../global.scss';
-  composes: input from '../global.scss';
+  @extend .light-text;
+  @extend .item-padding;
+  @extend .text-cursor;
 }
 
 .deleted-item {
   text-decoration: line-through;
-  composes: light_text from '../global.scss';
-  composes: item_padding from '../global.scss';
-  composes: text_cursor from '../global.scss';
-  composes: input from '../global.scss';
+  color: black;
+  @extend .item-padding;
+  @extend .text-cursor;
 }
 
 .items-container {
@@ -26,3 +26,13 @@
 .clickable-elements {
   float: right;
 }
+
+.no-style-input {
+  width: 170px;
+  outline: none;
+  border: none;
+  padding: 0 17px;
+  font-family: 'Times New Roman';
+  font-size: 16px;
+}
+

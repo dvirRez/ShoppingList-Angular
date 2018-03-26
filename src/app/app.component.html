@@ -1,10 +1,12 @@
-<div class="app-container">
-  <header class="header gradient_background">
+<ng4-loading-spinner> </ng4-loading-spinner>
+<div class="app-container" *ngIf="listItems">
+  <header class="header gradient-background">
     <span>Shopping List</span>
   </header>
+
   <div class="sub-container">
     <div class="container1">
-      <div class="list-outer-container light_border">
+      <div class="list-outer-container light-border">
         <app-shopping-list
           [listItems]="listItems"
           (onAddedInputEnterKey)="addItem($event)"

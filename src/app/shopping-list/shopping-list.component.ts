@@ -5,7 +5,7 @@ import { ListItemComponent } from '../list-item/list-item.component';
   selector: 'app-shopping-list',
   template: `
     <div class="list-container">
-      <div class="sub_header">
+      <div class="sub-header">
         <span>ADD YOUR ITEMS HERE</span>
       </div>
       <app-list-item
