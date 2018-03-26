@@ -10,11 +10,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       <form class="form-style">
         <p>
           <label>Quantity</label>
-          <input type="text" [(ngModel)]="item.quantity" name="quantity" />
+          <input min="0" type="number" [(ngModel)]="item.quantity" name="quantity" />
         </p>
         <p>
           <label>Price</label>
-          <input type="text" [(ngModel)]="item.price" name="price" />
+          <input min="0" type="number" [(ngModel)]="item.price" name="price" />
         </p>
         <p>
           <label>description</label>
